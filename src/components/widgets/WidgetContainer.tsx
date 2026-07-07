@@ -28,16 +28,7 @@ export function WidgetContainer({ title, onRemove, children, className }: Widget
         {onRemove && (
           <button
             onClick={onRemove}
-            className="p-1 rounded-md transition-colors"
-            style={{ color: 'var(--color-text-muted)' }}
-            onMouseEnter={e => {
-              e.currentTarget.style.color = 'var(--color-text-secondary)';
-              e.currentTarget.style.backgroundColor = 'var(--color-hover-surface)';
-            }}
-            onMouseLeave={e => {
-              e.currentTarget.style.color = 'var(--color-text-muted)';
-              e.currentTarget.style.backgroundColor = 'transparent';
-            }}
+            className="themed-icon-button p-1 rounded-md"
             aria-label="Remove widget"
           >
             <X size={16} />

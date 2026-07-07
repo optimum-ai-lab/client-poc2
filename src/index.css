@@ -39,6 +39,40 @@
 }
 
 @layer utilities {
+  /* Icon button — small clickable icons (remove, close, settings) */
+  .themed-icon-button {
+    color: var(--color-text-muted);
+    background-color: transparent;
+    transition-property: color, background-color;
+    transition-duration: 150ms;
+  }
+  .themed-icon-button:hover {
+    color: var(--color-text-secondary);
+    background-color: var(--color-hover-surface);
+  }
+
+  /* Accent button — primary call-to-action buttons */
+  .themed-accent-button {
+    background-color: var(--color-accent);
+    color: #fff;
+    transition-property: background-color;
+    transition-duration: 150ms;
+  }
+  .themed-accent-button:hover {
+    background-color: var(--color-accent-hover);
+  }
+
+  /* Widget library list item — inactive (hoverable) */
+  .themed-widget-item {
+    background-color: var(--color-hover-surface);
+    border-color: var(--color-border);
+    transition-property: border-color;
+    transition-duration: 150ms;
+  }
+  .themed-widget-item:hover {
+    border-color: var(--color-text-muted);
+  }
+
   .custom-scrollbar::-webkit-scrollbar {
     width: 6px;
     height: 6px;
