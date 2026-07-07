@@ -11,13 +11,33 @@ interface WidgetContainerProps {
 
 export function WidgetContainer({ title, onRemove, children, className }: WidgetContainerProps) {
   return (
-    <div className={cn("flex flex-col bg-slate-900 border border-slate-800 rounded-3xl p-5 overflow-hidden h-full", className)}>
+    <div
+      className={cn('flex flex-col rounded-3xl p-5 overflow-hidden h-full border', className)}
+      style={{
+        backgroundColor: 'var(--color-surface)',
+        borderColor: 'var(--color-border)',
+      }}
+    >
       <div className="flex items-center justify-between mb-4">
-        <h3 className="text-xs font-bold text-slate-500 uppercase tracking-tighter">{title}</h3>
+        <h3
+          className="text-xs font-bold uppercase tracking-tighter"
+          style={{ color: 'var(--color-text-muted)' }}
+        >
+          {title}
+        </h3>
         {onRemove && (
-          <button 
+          <button
             onClick={onRemove}
-            className="text-slate-500 hover:text-slate-300 transition-colors p-1 rounded-md hover:bg-slate-800"
+            className="p-1 rounded-md transition-colors"
+            style={{ color: 'var(--color-text-muted)' }}
+            onMouseEnter={e => {
+              e.currentTarget.style.color = 'var(--color-text-secondary)';
+              e.currentTarget.style.backgroundColor = 'var(--color-hover-surface)';
+            }}
+            onMouseLeave={e => {
+              e.currentTarget.style.color = 'var(--color-text-muted)';
+              e.currentTarget.style.backgroundColor = 'transparent';
+            }}
             aria-label="Remove widget"
           >
             <X size={16} />

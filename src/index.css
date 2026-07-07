@@ -1,5 +1,43 @@
 @import "tailwindcss";
 
+[data-theme="dark"] {
+  --color-canvas: #020617;
+  --color-surface: #0f172a;
+  --color-surface-muted: rgba(15, 23, 42, 0.5);
+  --color-border: #1e293b;
+  --color-border-muted: rgba(30, 41, 59, 0.5);
+  --color-text-primary: #e2e8f0;
+  --color-text-secondary: #94a3b8;
+  --color-text-muted: #64748b;
+  --color-hover-surface: #1e293b;
+  --color-accent: #4f46e5;
+  --color-accent-hover: #6366f1;
+  --color-accent-shadow: rgba(99, 102, 241, 0.4);
+  --color-widget-inner: rgba(30, 41, 59, 0.5);
+  --color-widget-inner-border: rgba(30, 41, 59, 0.5);
+  --color-scrollbar-thumb: #334155;
+  --color-selection: rgba(99, 102, 241, 0.3);
+}
+
+[data-theme="yellow"] {
+  --color-canvas: #fef9c3;
+  --color-surface: #fffbeb;
+  --color-surface-muted: rgba(255, 251, 235, 0.85);
+  --color-border: #fde68a;
+  --color-border-muted: rgba(253, 230, 138, 0.6);
+  --color-text-primary: #78350f;
+  --color-text-secondary: #92400e;
+  --color-text-muted: #b45309;
+  --color-hover-surface: #fef3c7;
+  --color-accent: #d97706;
+  --color-accent-hover: #b45309;
+  --color-accent-shadow: rgba(217, 119, 6, 0.4);
+  --color-widget-inner: rgba(254, 243, 199, 0.6);
+  --color-widget-inner-border: rgba(253, 230, 138, 0.6);
+  --color-scrollbar-thumb: #fbbf24;
+  --color-selection: rgba(217, 119, 6, 0.25);
+}
+
 @layer utilities {
   .custom-scrollbar::-webkit-scrollbar {
     width: 6px;
@@ -9,7 +47,7 @@
     background: transparent;
   }
   .custom-scrollbar::-webkit-scrollbar-thumb {
-    background-color: #334155;
+    background-color: var(--color-scrollbar-thumb, #334155);
     border-radius: 20px;
   }
 }
