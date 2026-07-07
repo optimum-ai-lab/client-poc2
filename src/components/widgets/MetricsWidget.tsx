@@ -12,18 +12,23 @@ export function MetricsWidget() {
   return (
     <div className="grid grid-cols-2 md:grid-cols-4 gap-4 h-full">
       {metrics.map((m, i) => (
-        <div key={i} className="flex flex-col justify-center p-4 rounded-lg bg-slate-800/50 border border-slate-800/50">
+        <div
+          key={i}
+          className="themed-inner-card flex flex-col justify-center p-4 rounded-lg border"
+        >
           <div className="flex items-center justify-between mb-2">
-            <span className="text-slate-400 text-xs font-medium uppercase tracking-wider">{m.label}</span>
+            <span className="text-xs font-medium uppercase tracking-wider" style={{ color: 'var(--color-text-muted)' }}>
+              {m.label}
+            </span>
             <div className={`p-1.5 rounded-md ${m.bg}`}>
               <m.icon size={14} className={m.color} />
             </div>
           </div>
           <div className="flex items-end gap-2 mt-1">
-            <span className="text-2xl font-semibold text-slate-100">{m.value}</span>
-            <span className={`text-xs mb-1 font-medium ${m.change.startsWith('+') && m.label !== 'Avg Latency' ? 'text-emerald-400' : 'text-emerald-400'}`}>
-              {m.change}
+            <span className="text-2xl font-semibold" style={{ color: 'var(--color-text-primary)' }}>
+              {m.value}
             </span>
+            <span className="text-xs mb-1 font-medium text-emerald-400">{m.change}</span>
           </div>
         </div>
       ))}
