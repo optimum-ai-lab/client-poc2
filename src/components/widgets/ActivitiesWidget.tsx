@@ -1,7 +1,6 @@
 import React from 'react';
 import { MOCK_ACTIVITIES } from '../../data';
 import { CheckCircle2, XCircle, Clock } from 'lucide-react';
-import { cn } from '../../lib/utils';
 
 export function ActivitiesWidget() {
   const getStatusIcon = (status: string) => {
@@ -17,16 +16,22 @@ export function ActivitiesWidget() {
     <div className="h-full overflow-y-auto pr-2 custom-scrollbar">
       <div className="flex flex-col space-y-3">
         {MOCK_ACTIVITIES.map((activity) => (
-          <div key={activity.id} className="flex items-start gap-3 p-3 rounded-lg bg-slate-800/30 border border-slate-800/50 hover:bg-slate-800/50 transition-colors">
+          <div key={activity.id} className="themed-activity-item flex items-start gap-3 p-3 rounded-lg border">
             <div className="mt-0.5">
               {getStatusIcon(activity.status)}
             </div>
             <div className="flex-1 min-w-0">
               <div className="flex items-center justify-between mb-1">
-                <span className="text-sm font-medium text-slate-200 truncate">{activity.agentName}</span>
-                <span className="text-xs text-slate-500 whitespace-nowrap ml-2">{activity.timestamp}</span>
+                <span className="text-sm font-medium truncate" style={{ color: 'var(--color-text-primary)' }}>
+                  {activity.agentName}
+                </span>
+                <span className="text-xs whitespace-nowrap ml-2" style={{ color: 'var(--color-text-muted)' }}>
+                  {activity.timestamp}
+                </span>
               </div>
-              <p className="text-xs text-slate-400 truncate">{activity.action}</p>
+              <p className="text-xs truncate" style={{ color: 'var(--color-text-secondary)' }}>
+                {activity.action}
+              </p>
             </div>
           </div>
         ))}

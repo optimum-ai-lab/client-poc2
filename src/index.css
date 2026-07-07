@@ -79,6 +79,23 @@
     border-color: var(--color-text-muted);
   }
 
+  /* Widget inner card (metric tiles, server icon bg, progress track) */
+  .themed-inner-card {
+    background-color: var(--color-widget-inner);
+    border-color: var(--color-widget-inner-border);
+  }
+
+  /* Activity list item with hover feedback */
+  .themed-activity-item {
+    background-color: var(--color-widget-inner);
+    border-color: var(--color-widget-inner-border);
+    transition-property: background-color;
+    transition-duration: 150ms;
+  }
+  .themed-activity-item:hover {
+    background-color: var(--color-hover-surface);
+  }
+
   .custom-scrollbar::-webkit-scrollbar {
     width: 6px;
     height: 6px;
