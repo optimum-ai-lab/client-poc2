@@ -16,7 +16,10 @@
   --color-widget-inner: rgba(30, 41, 59, 0.5);
   --color-widget-inner-border: rgba(30, 41, 59, 0.5);
   --color-scrollbar-thumb: #334155;
-  --color-selection: rgba(99, 102, 241, 0.3);
+}
+
+[data-theme="dark"] ::selection {
+  background-color: rgba(99, 102, 241, 0.3);
 }
 
 [data-theme="yellow"] {
@@ -35,7 +38,10 @@
   --color-widget-inner: rgba(254, 243, 199, 0.6);
   --color-widget-inner-border: rgba(253, 230, 138, 0.6);
   --color-scrollbar-thumb: #fbbf24;
-  --color-selection: rgba(217, 119, 6, 0.25);
+}
+
+[data-theme="yellow"] ::selection {
+  background-color: rgba(217, 119, 6, 0.25);
 }
 
 @layer utilities {

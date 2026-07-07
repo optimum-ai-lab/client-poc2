@@ -66,8 +66,6 @@ export default function App() {
       style={{
         backgroundColor: 'var(--color-canvas)',
         color: 'var(--color-text-primary)',
-        // @ts-ignore
-        '--tw-selection-color': 'var(--color-selection)',
       }}
     >
       {/* Top Navigation */}
