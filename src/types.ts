@@ -1,4 +1,6 @@
-export type WidgetType = 
+export type Theme = 'dark' | 'yellow';
+
+export type WidgetType =
   | 'metrics' 
   | 'activities' 
   | 'trends' 
