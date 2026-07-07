@@ -46,19 +46,7 @@ export function WidgetLibrary({ isOpen, onClose, activeWidgetIds, onAddWidget }:
                   Add widgets to customize your dashboard
                 </p>
               </div>
-              <button
-                onClick={onClose}
-                className="p-2 rounded-md transition-colors"
-                style={{ color: 'var(--color-text-muted)' }}
-                onMouseEnter={e => {
-                  e.currentTarget.style.color = 'var(--color-text-primary)';
-                  e.currentTarget.style.backgroundColor = 'var(--color-hover-surface)';
-                }}
-                onMouseLeave={e => {
-                  e.currentTarget.style.color = 'var(--color-text-muted)';
-                  e.currentTarget.style.backgroundColor = 'transparent';
-                }}
-              >
+              <button onClick={onClose} className="themed-icon-button p-2 rounded-md">
                 <X size={20} />
               </button>
             </div>
@@ -69,12 +57,14 @@ export function WidgetLibrary({ isOpen, onClose, activeWidgetIds, onAddWidget }:
                 return (
                   <div
                     key={widget.id}
-                    className="p-3 rounded-lg border flex items-start justify-between gap-4 transition-colors"
-                    style={{
-                      backgroundColor: isActive ? 'var(--color-surface-muted)' : 'var(--color-hover-surface)',
-                      borderColor: isActive ? 'var(--color-border-muted)' : 'var(--color-border)',
-                      opacity: isActive ? 0.6 : 1,
-                    }}
+                    className={`p-3 rounded-lg border flex items-start justify-between gap-4 ${
+                      isActive ? '' : 'themed-widget-item'
+                    }`}
+                    style={isActive ? {
+                      backgroundColor: 'var(--color-surface-muted)',
+                      borderColor: 'var(--color-border-muted)',
+                      opacity: 0.6,
+                    } : undefined}
                   >
                     <div className="flex-1 min-w-0">
                       <h3 className="text-sm font-medium" style={{ color: 'var(--color-text-primary)' }}>
@@ -90,12 +80,14 @@ export function WidgetLibrary({ isOpen, onClose, activeWidgetIds, onAddWidget }:
                     <button
                       disabled={isActive}
                       onClick={() => onAddWidget(widget)}
-                      className="p-1.5 rounded-md flex-shrink-0 transition-colors text-white"
-                      style={{
-                        backgroundColor: isActive ? 'var(--color-hover-surface)' : 'var(--color-accent)',
-                        cursor: isActive ? 'not-allowed' : 'pointer',
-                        color: isActive ? 'var(--color-text-muted)' : 'white',
-                      }}
+                      className={isActive
+                        ? 'p-1.5 rounded-md flex-shrink-0 cursor-not-allowed'
+                        : 'themed-accent-button p-1.5 rounded-md flex-shrink-0'
+                      }
+                      style={isActive ? {
+                        backgroundColor: 'var(--color-hover-surface)',
+                        color: 'var(--color-text-muted)',
+                      } : undefined}
                     >
                       <Plus size={16} />
                     </button>

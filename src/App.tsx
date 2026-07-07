@@ -116,22 +116,15 @@ export default function App() {
 
           <button
             onClick={() => setIsLibraryOpen(true)}
-            className="flex items-center gap-2 text-white px-4 py-2 rounded-lg text-sm font-semibold transition-all"
-            style={{ backgroundColor: 'var(--color-accent)' }}
-            onMouseEnter={e => (e.currentTarget.style.backgroundColor = 'var(--color-accent-hover)')}
-            onMouseLeave={e => (e.currentTarget.style.backgroundColor = 'var(--color-accent)')}
+            className="themed-accent-button flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-semibold"
           >
             <Plus size={16} />
             <span className="hidden sm:inline">Add Widget</span>
           </button>
 
           <button
-            className="w-10 h-10 rounded-full border flex items-center justify-center transition-colors"
-            style={{
-              backgroundColor: 'var(--color-hover-surface)',
-              borderColor: 'var(--color-border)',
-              color: 'var(--color-text-muted)',
-            }}
+            className="themed-icon-button w-10 h-10 rounded-full border flex items-center justify-center"
+            style={{ borderColor: 'var(--color-border)' }}
           >
             <Settings size={20} />
           </button>
@@ -157,8 +150,7 @@ export default function App() {
             </p>
             <button
               onClick={() => setIsLibraryOpen(true)}
-              className="flex items-center gap-2 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors"
-              style={{ backgroundColor: 'var(--color-accent)' }}
+              className="themed-accent-button flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium"
             >
               <Plus size={16} />
               Open Widget Library
