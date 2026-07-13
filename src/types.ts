@@ -23,6 +23,7 @@ export interface AgentActivity {
   action: string;
   timestamp: string;
   status: 'success' | 'failed' | 'pending';
+  date: string; // ISO YYYY-MM-DD
 }
 
 export interface DeploymentLocation {
