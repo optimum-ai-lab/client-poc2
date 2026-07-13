@@ -44,6 +44,28 @@
   background-color: rgba(217, 119, 6, 0.25);
 }
 
+[data-theme="ocean"] {
+  --color-canvas: #0d1f3c;
+  --color-surface: #132847;
+  --color-surface-muted: rgba(19, 40, 71, 0.5);
+  --color-border: #1e3a5c;
+  --color-border-muted: rgba(30, 58, 92, 0.5);
+  --color-text-primary: #cfe4f7;
+  --color-text-secondary: #7fb8dc;
+  --color-text-muted: #4a88b0;
+  --color-hover-surface: #1a3355;
+  --color-accent: #0ea5e9;
+  --color-accent-hover: #38bdf8;
+  --color-accent-shadow: rgba(14, 165, 233, 0.4);
+  --color-widget-inner: rgba(19, 40, 71, 0.5);
+  --color-widget-inner-border: rgba(30, 58, 92, 0.5);
+  --color-scrollbar-thumb: #1e3a5c;
+}
+
+[data-theme="ocean"] ::selection {
+  background-color: rgba(14, 165, 233, 0.3);
+}
+
 @layer utilities {
   /* Icon button — small clickable icons (remove, close, settings) */
   .themed-icon-button {
