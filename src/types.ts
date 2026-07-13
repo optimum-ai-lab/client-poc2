@@ -1,4 +1,4 @@
-export type Theme = 'dark' | 'yellow';
+export type Theme = 'dark' | 'yellow' | 'ocean';
 
 export type WidgetType =
   | 'metrics' 
