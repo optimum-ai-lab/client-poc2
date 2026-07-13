@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { LayoutDashboard, Plus, Settings } from 'lucide-react';
-import { WidgetConfig } from './types';
+import { WidgetConfig, Theme } from './types';
 import { WIDGET_LIBRARY } from './data';
 import { WidgetLibrary } from './components/WidgetLibrary';
 import { WidgetContainer } from './components/widgets/WidgetContainer';
@@ -17,6 +17,7 @@ import { useTheme } from './ThemeContext';
 const THEME_LABELS: Record<string, string> = {
   dark: 'Dark',
   yellow: 'Yellow',
+  ocean: 'Ocean',
 };
 
 export default function App() {
@@ -100,7 +101,7 @@ export default function App() {
           {/* Theme Switcher */}
           <select
             value={theme}
-            onChange={e => setTheme(e.target.value as 'dark' | 'yellow')}
+            onChange={e => setTheme(e.target.value as Theme)}
             className="text-sm font-medium rounded-lg px-3 py-2 border cursor-pointer transition-colors focus:outline-none"
             style={{
               backgroundColor: 'var(--color-surface)',

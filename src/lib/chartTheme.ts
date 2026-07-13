@@ -29,4 +29,13 @@ export const CHART_THEME: Record<Theme, ChartColors> = {
     tooltipText: '#78350f',
     cursor: '#fef3c7',
   },
+  ocean: {
+    grid: '#0a2540',
+    axis: '#38bdf8',
+    axisLabel: '#7dd3fc',
+    tooltipBg: '#041628',
+    tooltipBorder: '#0a2540',
+    tooltipText: '#bfdbfe',
+    cursor: '#082030',
+  },
 };
