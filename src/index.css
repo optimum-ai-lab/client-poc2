@@ -118,6 +118,21 @@
     background-color: var(--color-hover-surface);
   }
 
+  /* Native date input styled to match the active theme */
+  .themed-date-input {
+    position: absolute;
+    width: 0;
+    height: 0;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  /* Calendar button active state when a date is selected */
+  .themed-date-active {
+    color: var(--color-accent) !important;
+    border-color: var(--color-accent) !important;
+  }
+
   .custom-scrollbar::-webkit-scrollbar {
     width: 6px;
     height: 6px;

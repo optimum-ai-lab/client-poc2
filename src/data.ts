@@ -43,12 +43,32 @@ export const MOCK_DEPLOYMENTS: DeploymentLocation[] = [
 ];
 
 export const MOCK_ACTIVITIES: AgentActivity[] = [
-  { id: '1', agentName: 'DataScraper_Alpha', action: 'Completed web scraping task', timestamp: '2 mins ago', status: 'success' },
-  { id: '2', agentName: 'ReportGen_V2', action: 'Encountered rate limit', timestamp: '5 mins ago', status: 'failed' },
-  { id: '3', agentName: 'SupportBot_Prod', action: 'Waiting for user confirmation', timestamp: '12 mins ago', status: 'pending' },
-  { id: '4', agentName: 'CodeReviewer', action: 'Merged PR #442', timestamp: '18 mins ago', status: 'success' },
-  { id: '5', agentName: 'EmailAgent', action: 'Drafted campaign outline', timestamp: '22 mins ago', status: 'success' },
-  { id: '6', agentName: 'DataScraper_Beta', action: 'Failed to parse JSON', timestamp: '1 hour ago', status: 'failed' },
+  // 2026-07-13 (today)
+  { id: '1',  agentName: 'DataScraper_Alpha',  action: 'Completed web scraping task',       timestamp: '2 mins ago',  status: 'success', date: '2026-07-13' },
+  { id: '2',  agentName: 'ReportGen_V2',        action: 'Encountered rate limit',             timestamp: '5 mins ago',  status: 'failed',  date: '2026-07-13' },
+  { id: '3',  agentName: 'SupportBot_Prod',     action: 'Waiting for user confirmation',      timestamp: '12 mins ago', status: 'pending', date: '2026-07-13' },
+  { id: '4',  agentName: 'CodeReviewer',         action: 'Merged PR #442',                    timestamp: '18 mins ago', status: 'success', date: '2026-07-13' },
+  { id: '5',  agentName: 'EmailAgent',           action: 'Drafted campaign outline',           timestamp: '22 mins ago', status: 'success', date: '2026-07-13' },
+  { id: '6',  agentName: 'DataScraper_Beta',    action: 'Failed to parse JSON',               timestamp: '1 hour ago',  status: 'failed',  date: '2026-07-13' },
+  // 2026-07-12 (yesterday)
+  { id: '7',  agentName: 'AnalyticsBot',         action: 'Generated daily report',             timestamp: 'Yesterday 23:45', status: 'success', date: '2026-07-12' },
+  { id: '8',  agentName: 'CodeReviewer',         action: 'Flagged security vulnerability',     timestamp: 'Yesterday 21:10', status: 'failed',  date: '2026-07-12' },
+  { id: '9',  agentName: 'DeployAgent_Prod',    action: 'Deployed v2.4.1 to us-east-1',      timestamp: 'Yesterday 18:30', status: 'success', date: '2026-07-12' },
+  // 2026-07-11
+  { id: '10', agentName: 'SupportBot_Prod',     action: 'Resolved 14 support tickets',        timestamp: 'Jul 11, 15:22', status: 'success', date: '2026-07-11' },
+  { id: '11', agentName: 'DataScraper_Alpha',   action: 'Timeout after 30s',                  timestamp: 'Jul 11, 11:05', status: 'failed',  date: '2026-07-11' },
+  // 2026-07-10
+  { id: '12', agentName: 'EmailAgent',           action: 'Sent 320 newsletter emails',         timestamp: 'Jul 10, 09:00', status: 'success', date: '2026-07-10' },
+  { id: '13', agentName: 'ReportGen_V2',         action: 'Waiting on upstream data feed',      timestamp: 'Jul 10, 08:45', status: 'pending', date: '2026-07-10' },
+  // 2026-07-07
+  { id: '14', agentName: 'DeployAgent_Staging', action: 'Rolled back release candidate',      timestamp: 'Jul 7, 14:55',  status: 'failed',  date: '2026-07-07' },
+  { id: '15', agentName: 'AnalyticsBot',         action: 'Completed weekly trend analysis',    timestamp: 'Jul 7, 10:30',  status: 'success', date: '2026-07-07' },
+  // 2026-07-03
+  { id: '16', agentName: 'CodeReviewer',         action: 'Approved 8 PRs',                     timestamp: 'Jul 3, 16:12',  status: 'success', date: '2026-07-03' },
+  { id: '17', agentName: 'SupportBot_Dev',      action: 'Authentication failure',              timestamp: 'Jul 3, 09:40',  status: 'failed',  date: '2026-07-03' },
+  // 2026-06-30
+  { id: '18', agentName: 'DataScraper_Beta',    action: 'Crawled 5,200 product pages',        timestamp: 'Jun 30, 22:15', status: 'success', date: '2026-06-30' },
+  { id: '19', agentName: 'EmailAgent',           action: 'Pending SMTP credential refresh',    timestamp: 'Jun 30, 11:50', status: 'pending', date: '2026-06-30' },
 ];
 
 export const MOCK_ISSUE_RATES = [
