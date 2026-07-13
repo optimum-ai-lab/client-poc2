@@ -45,25 +45,25 @@
 }
 
 [data-theme="ocean"] {
-  --color-canvas: #020f1a;
-  --color-surface: #041628;
-  --color-surface-muted: rgba(4, 22, 40, 0.85);
-  --color-border: #0a2540;
-  --color-border-muted: rgba(10, 37, 64, 0.6);
-  --color-text-primary: #bfdbfe;
-  --color-text-secondary: #7dd3fc;
-  --color-text-muted: #38bdf8;
-  --color-hover-surface: #082030;
-  --color-accent: #0284c7;
-  --color-accent-hover: #0369a1;
-  --color-accent-shadow: rgba(2, 132, 199, 0.4);
-  --color-widget-inner: rgba(10, 37, 64, 0.5);
-  --color-widget-inner-border: rgba(10, 37, 64, 0.5);
-  --color-scrollbar-thumb: #0c4a6e;
+  --color-canvas: #f0f9ff;
+  --color-surface: #ffffff;
+  --color-surface-muted: rgba(240, 249, 255, 0.85);
+  --color-border: #bae6fd;
+  --color-border-muted: rgba(186, 230, 253, 0.6);
+  --color-text-primary: #0c4a6e;
+  --color-text-secondary: #0369a1;
+  --color-text-muted: #0284c7;
+  --color-hover-surface: #e0f2fe;
+  --color-accent: #0ea5e9;
+  --color-accent-hover: #0284c7;
+  --color-accent-shadow: rgba(14, 165, 233, 0.35);
+  --color-widget-inner: rgba(224, 242, 254, 0.6);
+  --color-widget-inner-border: rgba(186, 230, 253, 0.6);
+  --color-scrollbar-thumb: #7dd3fc;
 }
 
 [data-theme="ocean"] ::selection {
-  background-color: rgba(2, 132, 199, 0.3);
+  background-color: rgba(14, 165, 233, 0.25);
 }
 
 @layer utilities {
