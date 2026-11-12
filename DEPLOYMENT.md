@@ -5,9 +5,13 @@ on every push to `main` (i.e. once a PR is merged to `main`) and manually via
 **Run workflow**.
 
 - **Hosting:** Azure Static Web Apps
-- **Resource group:** `optiengr-ai-team-rg-poc`
+- **Resource group:** `optimum-ai-studio-rg-eval`
 - **Auth:** OIDC federated credentials (no long-lived secret stored)
 - **Build output uploaded:** `dist/`
+
+> Until September 2026 this app deployed to `optiengr-ai-team-rg-poc`. That
+> resource group has been retired; since 2026-11-13 the target is
+> `optimum-ai-studio-rg-eval`.
 
 > Setup mirrors the sibling `abeam-poc1` project exactly; only the target
 > deployment resource group and Static Web App resource differ.
@@ -18,10 +22,10 @@ on every push to `main` (i.e. once a PR is merged to `main`) and manually via
 
 | Item | Value |
 |------|-------|
-| Static Web App | `optiengr-ai-team-swa-poc2-poc` |
-| Resource group | `optiengr-ai-team-rg-poc` |
-| Region | East Asia (`eastasia`) |
-| Live URL | `https://<swa-default-hostname>.azurestaticapps.net` (resolved after the SWA is created) |
+| Static Web App | `optimum-ai-studio-swa-poc2-eval` (Free plan) |
+| Resource group | `optimum-ai-studio-rg-eval` |
+| Region | East Asia (`eastasia`) — Static Web Apps are not offered in the resource group's own region (Central India) |
+| Live URL | `https://jolly-dune-0ead8a400.5.azurestaticapps.net` |
 | App registration | `client-poc2-deploy` — client ID set as the `AZURE_CLIENT_ID` secret |
 | RBAC | `Contributor` scoped to **only** the SWA resource (least privilege) |
 | Federated credential | subject `repo:optimum-ai-lab/client-poc2:environment:abeam-poc` |
@@ -40,18 +44,18 @@ need to repeat them for normal deploys.
 ## The Static Web App resource name
 
 `.github/workflows/deploy.yml` already points at the Static Web App resource
-that lives in `optiengr-ai-team-rg-poc`:
+that lives in `optimum-ai-studio-rg-eval`:
 
 ```yaml
 env:
-  AZURE_RESOURCE_GROUP: optiengr-ai-team-rg-poc
-  AZURE_STATIC_WEB_APP_NAME: optiengr-ai-team-swa-poc2-poc
+  AZURE_RESOURCE_GROUP: optimum-ai-studio-rg-eval
+  AZURE_STATIC_WEB_APP_NAME: optimum-ai-studio-swa-poc2-eval
 ```
 
 Confirm it exists with:
 
 ```bash
-az staticwebapp list --resource-group optiengr-ai-team-rg-poc \
+az staticwebapp list --resource-group optimum-ai-studio-rg-eval \
   --query "[].name" -o tsv
 ```
 
@@ -60,9 +64,10 @@ workflow deploys it):
 
 ```bash
 az staticwebapp create \
-  --name optiengr-ai-team-swa-poc2-poc \
-  --resource-group optiengr-ai-team-rg-poc \
-  --location eastasia
+  --name optimum-ai-studio-swa-poc2-eval \
+  --resource-group optimum-ai-studio-rg-eval \
+  --location eastasia \
+  --sku Free
 ```
 
 ---
@@ -76,7 +81,7 @@ the `abeam-poc` environment):
 |--------|-----------------|
 | `AZURE_CLIENT_ID` | App registration (service principal) client/app ID |
 | `AZURE_TENANT_ID` | Azure AD tenant ID |
-| `AZURE_SUBSCRIPTION_ID` | Subscription containing `optiengr-ai-team-rg-poc` |
+| `AZURE_SUBSCRIPTION_ID` | Subscription containing `optimum-ai-studio-rg-eval` |
 
 No client secret / deployment token is stored — the workflow logs in with OIDC
 and resolves the Static Web Apps deployment token at runtime.
@@ -93,14 +98,15 @@ and resolves the Static Web Apps deployment token at runtime.
    az ad sp create --id <appId>
    ```
 
-2. **Grant it rights on the resource group** so it can read the SWA token and
+2. **Grant it rights on the Static Web App only** (least privilege — the
+   resource group holds other workloads) so it can read the SWA token and
    deploy:
 
    ```bash
    az role assignment create \
      --assignee <appId> \
      --role "Contributor" \
-     --scope /subscriptions/<sub-id>/resourceGroups/optiengr-ai-team-rg-poc
+     --scope /subscriptions/<sub-id>/resourceGroups/optimum-ai-studio-rg-eval/providers/Microsoft.Web/staticSites/optimum-ai-studio-swa-poc2-eval
    ```
 
 3. **Add a federated credential** matching this repo. This repo deploys through
