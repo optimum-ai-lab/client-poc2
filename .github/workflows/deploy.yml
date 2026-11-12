@@ -16,8 +16,8 @@ permissions:
   contents: read
 
 env:
-  AZURE_RESOURCE_GROUP: optiengr-ai-team-rg-poc
-  AZURE_STATIC_WEB_APP_NAME: optiengr-ai-team-swa-poc2-poc
+  AZURE_RESOURCE_GROUP: optimum-ai-studio-rg-eval
+  AZURE_STATIC_WEB_APP_NAME: optimum-ai-studio-swa-poc2-eval
 
 jobs:
   build-and-deploy:
